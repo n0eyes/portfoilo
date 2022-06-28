@@ -4,6 +4,8 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  cursor: none;
+  overflow: hidden !important;
 }
 
 a {
@@ -13,4 +15,13 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+:root {
+  --dark: #070707;
+  --transition: cubic-beizer(0.23, 0.7, 0, 1);
+}
+
+.swiper {
+  overflow: visible !important;
 }

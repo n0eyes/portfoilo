@@ -1,0 +1,117 @@
+.swiper-root {
+  width: 100%;
+  height: 100%;
+}
+.swiper-container-bg {
+  z-index: 32;
+  position: relative;
+  top: -15vh;
+  left: 40%;
+  transform: rotate(15deg);
+  opacity: 0.5;
+  filter: blur(100px);
+}
+.swiper-container {
+  z-index: 33;
+  position: relative;
+  left: 40%;
+  transform: rotate(-15deg);
+  transform-origin: center;
+  overflow: visible !important;
+}
+
+.swiper {
+  height: 45rem;
+  position: relative;
+}
+
+.slide {
+  height: 45rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  transition-property: transform, top, left;
+  transition-duration: 0.5s;
+  top: 0;
+  left: 0;
+  will-change: top, left;
+}
+
+.opened {
+  z-index: 1000000;
+  top: 55%;
+  left: 30%;
+  transform: translate(-50%, -50%) rotate(15deg) scale(1.2) !important;
+  box-shadow: rgb(0 0 0 / 0.75) 0 0 0 10000px;
+}
+
+.slide-item {
+  width: 100%;
+  height: 45rem;
+  z-index: 44;
+  background-size: cover;
+  border-radius: 1rem;
+}
+
+.about {
+  width: 100%;
+}
+
+.project {
+  width: 200%;
+  position: absolute;
+  left: -40%;
+}
+.logo {
+  width: 200%;
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #ec449b;
+}
+
+@media screen and (max-width: 1300px) {
+  .swiper-container {
+    left: 60%;
+    top: 10vh;
+  }
+  .swiper-container-bg {
+    left: 60%;
+    top: -25vh;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .opened {
+    transform: translate(-80%, -50%) rotate(15deg) scale(0.8) !important;
+  }
+}
+@media screen and (max-width: 900px) {
+  .opened {
+    transform: translate(-75%, -50%) rotate(15deg) scale(0.6) !important;
+  }
+}
+@media screen and (max-height: 820px) {
+  .opened {
+    transform: translate(-75%, -70%) rotate(15deg) scale(0.8) !important;
+  }
+}
+@media screen and (max-width: 450px) {
+  .swiper-container {
+    left: 60%;
+    top: 15vh;
+  }
+  .swiper-container-bg {
+    left: 60%;
+    top: -30vh;
+  }
+  .slide,
+  .about,
+  .project {
+    height: 30rem !important;
+  }
+  .opened {
+    top: 30%;
+    left: 25%;
+    transform: translate(-50%, -50%) rotate(15deg) scale(0.8) !important;
+  }
+}

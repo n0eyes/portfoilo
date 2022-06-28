@@ -1,0 +1,25 @@
+.root {
+  position: absolute;
+  top: -10vw;
+  left: -8vw;
+  width: 45vw;
+  height: 160vh;
+  transform: rotate(-15deg);
+  background-color: #070707;
+  filter: blur(5px);
+  z-index: 34;
+}
+@media screen and (max-width: 1300px) {
+  .root {
+    width: 60vw;
+    left: -10vw;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .root {
+    transform: rotate(0);
+    width: 40vw;
+    left: -5vw;
+  }
+}

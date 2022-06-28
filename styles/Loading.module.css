@@ -1,0 +1,32 @@
+@keyframes top {
+  to {
+    display: none;
+    transform: rotate(100deg);
+  }
+}
+
+@keyframes bottom {
+  to {
+    display: none;
+    transform: rotate(-145deg);
+  }
+}
+.loading-box {
+  position: absolute;
+  right: -1200px;
+  width: 4800px;
+  height: 1200px;
+  z-index: 999999;
+  transform-origin: right;
+  background-color: #fff;
+  transform: rotate(-15deg);
+}
+
+.top {
+  top: -1200px;
+  animation: top 3s 1s ease forwards;
+}
+
+.bottom {
+  animation: bottom 3s 1s ease forwards;
+}
