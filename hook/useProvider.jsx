@@ -5,11 +5,11 @@ import {
 } from "../context/SliderProvider";
 
 function useProvider(fn) {
-  const activeIndex = useContext(activeIndexContext);
+  const sliderInfo = useContext(activeIndexContext);
   const setActiveIndex = useContext(setActiveSliderContext);
 
   const context = {
-    activeIndex,
+    sliderInfo,
     setActiveIndex,
   };
 

@@ -6,6 +6,7 @@ function Description() {
     (context) => context.activeIndex
   );
 
+  console.log(activeIndex);
   return (
     <div className={styles.root} key={activeIndex}>
       <div className={styles.title}>{portfolioInfo[activeIndex]?.title}</div>

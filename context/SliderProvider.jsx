@@ -1,8 +1,8 @@
 import React from "react";
 import { useMemo, useState, createContext } from "react";
 
-export const activeIndexContext = createContext(null);
-export const setActiveSliderContext = createContext(null);
+export const sliderInfoContext = createContext({});
+export const setActiveSliderContext = createContext({});
 
 function SliderProvider({ renderDescription, renderSlider }) {
   const portfolioInfo = useMemo(
@@ -37,12 +37,12 @@ function SliderProvider({ renderDescription, renderSlider }) {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <activeIndexContext.Provider value={{ activeIndex, portfolioInfo }}>
+    <sliderInfoContext.Provider value={{ activeIndex, portfolioInfo }}>
       <setActiveSliderContext.Provider value={setActiveIndex}>
         {renderDescription()}
         {renderSlider()}
       </setActiveSliderContext.Provider>
-    </activeIndexContext.Provider>
+    </sliderInfoContext.Provider>
   );
 }
 
