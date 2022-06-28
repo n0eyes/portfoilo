@@ -1,7 +1,10 @@
 import React from "react";
 import { useMemo, useState, createContext } from "react";
 
-export const sliderInfoContext = createContext({});
+export const sliderInfoContext = createContext({
+  activeIndex: 0,
+  portfolioInfo: [],
+});
 export const setActiveSliderContext = createContext({});
 
 function SliderProvider({ renderDescription, renderSlider }) {
