@@ -11,10 +11,15 @@ import SlideStopper from "./SlideStopper";
 function Main({ mouseOverEvent, mouseLeaveEvent }) {
   const [dummySlideCount, setDummySlideCount] = useState(2);
   const [isOpened, setIsOpened] = useState(false);
+  const [isMobile, setIsMobile] = useState(true);
   const [openedSlide, setOpenedSlide] = useState(null);
   const [controlledSwiper, setControlledSwiper] = useState(null);
   const setActiveIndex = useProvider((context) => context.setActiveIndex);
   const router = useRouter();
+
+  useEffect(() => {
+    setIsMobile(/iPhone|iPad|iPod|Android/i.test(window.navigator.userAgent));
+  }, []);
   const data = [
     {
       url: "assets/img/about.jpeg",
@@ -54,7 +59,10 @@ function Main({ mouseOverEvent, mouseLeaveEvent }) {
     return () => window.removeEventListener("resize", countDummy);
   }, []);
 
-  const onFocusSlide = (i) => setOpenedSlide(i);
+  const onFocusSlide = (i) => {
+    console.log("dd");
+    setOpenedSlide(i);
+  };
   const onBlurSlide = () => {
     setOpenedSlide(null);
     setIsOpened(false);
@@ -75,10 +83,10 @@ function Main({ mouseOverEvent, mouseLeaveEvent }) {
           className={styles.swiper}
           modules={[Mousewheel, FreeMode, Controller, Pagination, Parallax]}
           freeMode={{ enable: true }}
+          allowTouchMove={false}
           mousewheel={true}
           parallax={true}
           preloadImages={true}
-          allowTouchMove={false}
           controller={{
             control: controlledSwiper?.destroyed ? null : controlledSwiper,
           }}
@@ -116,7 +124,11 @@ function Main({ mouseOverEvent, mouseLeaveEvent }) {
             s.activeIndex < data.length && setActiveIndex(s.activeIndex);
           }}
         >
-          <SlideStopper isOpened={openedSlide !== null} index={openedSlide} />
+          <SlideStopper
+            isOpened={openedSlide !== null}
+            isMobile={isMobile}
+            index={openedSlide}
+          />
           {data.map(({ url, selector }, i) => (
             <SwiperSlide
               className={`${styles.slide} ${

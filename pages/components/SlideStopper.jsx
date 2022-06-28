@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useSwiper } from "swiper/react";
 
-function SlideStopper({ isOpened, index }) {
+function SlideStopper({ isOpened, isMobile, index }) {
   const swiper = useSwiper();
 
   useEffect(() => {
@@ -12,7 +12,7 @@ function SlideStopper({ isOpened, index }) {
       } else {
         swiper.enable();
       }
-  }, [isOpened, swiper]);
+  }, [isOpened, isMobile, swiper]);
 
   return null;
 }
