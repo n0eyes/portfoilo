@@ -1,11 +1,11 @@
 import { useContext } from "react";
 import {
-  activeIndexContext,
+  sliderInfoContext,
   setActiveSliderContext,
 } from "../context/SliderProvider";
 
 function useProvider(fn) {
-  const sliderInfo = useContext(activeIndexContext);
+  const sliderInfo = useContext(sliderInfoContext);
   const setActiveIndex = useContext(setActiveSliderContext);
 
   const context = {

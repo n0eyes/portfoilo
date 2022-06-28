@@ -3,10 +3,9 @@ import useProvider from "../../hook/useProvider";
 import styles from "../../styles/Description.module.css";
 function Description() {
   const { activeIndex, portfolioInfo } = useProvider(
-    (context) => context.activeIndex
+    (context) => context.sliderInfo
   );
 
-  console.log(activeIndex);
   return (
     <div className={styles.root} key={activeIndex}>
       <div className={styles.title}>{portfolioInfo[activeIndex]?.title}</div>
