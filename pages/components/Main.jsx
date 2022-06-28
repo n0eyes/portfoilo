@@ -105,11 +105,11 @@ function Main({ mouseOverEvent, mouseLeaveEvent }) {
             },
             1370: {
               slidesPerView: 3,
-              spaceBetween: 150,
+              spaceBetween: 120,
             },
             2000: {
               slidesPerView: 4,
-              spaceBetween: 150,
+              spaceBetween: 120,
             },
           }}
           onSlideChange={(s) => {
