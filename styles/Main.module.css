@@ -39,7 +39,7 @@
 .opened {
   z-index: 1000000;
   top: 55%;
-  left: 30%;
+  left: 25%;
   transform: translate(-50%, -50%) rotate(15deg) scale(1.2) !important;
   box-shadow: rgb(0 0 0 / 0.75) 0 0 0 10000px;
 }

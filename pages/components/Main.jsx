@@ -46,7 +46,7 @@ function Main({ mouseOverEvent, mouseLeaveEvent }) {
     const countDummy = () => {
       const w = window.innerWidth;
 
-      if (w >= 2000) {
+      if (w >= 1800) {
         setDummySlideCount(3);
       } else if (w >= 1100) {
         setDummySlideCount(2);
@@ -60,7 +60,6 @@ function Main({ mouseOverEvent, mouseLeaveEvent }) {
   }, []);
 
   const onFocusSlide = (i) => {
-    console.log("dd");
     setOpenedSlide(i);
   };
   const onBlurSlide = () => {
@@ -115,7 +114,7 @@ function Main({ mouseOverEvent, mouseLeaveEvent }) {
               slidesPerView: 3,
               spaceBetween: 120,
             },
-            2000: {
+            1800: {
               slidesPerView: 4,
               spaceBetween: 120,
             },
